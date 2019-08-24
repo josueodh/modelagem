@@ -30,3 +30,26 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+function displayAlert(id) {
+    var form = document.forms["delete"];
+    var prepareRoute = "{!! route('members.destroy', 'y'); !!}";
+    form.action = prepareRoute.replace('y', id);
+    Swal.fire({
+        title: 'Deseja mesmo deletar esse registro?',
+        text: "Não será possível reverter essa ação!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim!'
+    }).then((result) => {
+        if (result.value) {
+            Swal.fire(
+                'Deletado!',
+                'O registro foi deletado com sucesso.',
+                'success'
+            )
+            form.submit();
+        }
+    })
+}

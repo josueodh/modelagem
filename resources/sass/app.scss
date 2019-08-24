@@ -4,8 +4,6 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
 // Font Awesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -15,3 +13,14 @@
 
 // AdminLTE
 @import '~admin-lte/build/scss/AdminLTE.scss';
+
+//SweetAlert2
+@import '~sweetalert2/src/sweetalert2.scss';
+
+.botao_titulo{
+    float: right;
+    margin-bottom: 10px;
+}
+.btn-back{
+    float: left;
+}
