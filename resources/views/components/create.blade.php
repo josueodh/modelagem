@@ -1,14 +1,16 @@
-<div class="col-md-8 offset-md-2 col-12">
-    <div class="card card-dark">
+<div class="col-md-10 offset-md-1 col-12">
+    <div class="card card-outline card-primary">
         <div class="card-header">
-            <h3 class="card-title">{{ $h3 ?? null }} </h3>
+            <h3 class="card-title title-form">{{ $title ?? null }} </h3>
         </div>
-        <form id="form-adicionar" action="{{ $url ?? '/' }}" method="post">
-            @csrf
-            {{ $form ?? null }}
-        </form>
+        <div class="card-body">
+            <form id="form-adicionar" action="{{ $url ?? '/' }}" method="post" enctype="multipart/form-data">
+                @csrf
+                {{ $form ?? null }}
+            </form>
+        </div>
         <div class="card-footer">
-            <button type="submit" form="form-adicionar" class="btn btn-dark">Cadastrar</button>
+            <button type="submit" form="form-adicionar" class="btn btn-primary float-right">Cadastrar</button>
             {{ $voltar ?? null }}
         </div>
     </div>
