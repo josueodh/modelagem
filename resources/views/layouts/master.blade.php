@@ -26,19 +26,6 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
             </ul>
-
-            @if (isset($searchUrl))
-                <form class="form-inline ml-3" action="{{ $searchUrl }}">
-                    <div class="input-group input-group-sm">
-                        <input name="pesquisa" class="form-control form-control-navbar" type="search" placeholder="Pesquisar">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            @endif
         </nav>
         <!-- /.navbar -->
 
