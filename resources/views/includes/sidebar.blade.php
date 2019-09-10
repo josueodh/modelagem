@@ -36,13 +36,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('members.index')}}" class="nav-link {{ Route::is('members.index') ? 'active' : '' }}">
+                    <a href="{{route('users.index')}}" class="nav-link {{ Route::is('users.index') ? 'active' : '' }}">
                         <i class="fas fa-users"></i>
                         <p>Membros</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('roles.index')}}" class="nav-link {{ Route::is('roles.index') ? 'active' : '' }}">
+                    <a href="#" class="nav-link {{ Route::is('roles.index') ? 'active' : '' }}">
                         <i class="fas fa-address-card"></i>
                         <p>Cargo</p>
                     </a>
