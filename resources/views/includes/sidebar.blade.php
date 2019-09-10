@@ -12,7 +12,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <a href="#">
-                    <img src="{{ asset('img/code.png') }}" class="img-circle elevation-2 perfil-sidebar">
+                    <img src="{{ asset('img/user.jpg') }}" class="img-circle elevation-2 perfil-sidebar">
                 </a>
             </div>
             <div class="info">
@@ -31,20 +31,26 @@
             <ul class="nav nav-pills nav-sidebar flex-column icone_sidebar" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="#" class="nav-link {{ '' ? 'active' : '' }}">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('users.index')}}" class="nav-link {{ Route::is('users.index') ? 'active' : '' }}">
-                        <i class="fas fa-users"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Membros</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('roles.index') }}" class="nav-link {{ Route::is('roles.index') ? 'active' : '' }}">
-                        <i class="fas fa-address-card"></i>
+                        <i class="nav-icon fas fa-address-card"></i>
                         <p>Cargo</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('departaments.index') }}" class="nav-link {{ Route::is('departaments.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-boxes"></i>
+                        <p>Departamento</p>
                     </a>
                 </li>
             </ul>
