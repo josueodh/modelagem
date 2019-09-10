@@ -37,6 +37,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->merge([
+            'password' => bcrypt($request->password),
+            'permission' => $request['permission'] == 'on',
+        ]);
         User::create($request->all());
         return redirect()->route('users.index')->with('success', true);
     }
@@ -72,8 +77,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $request->merge(['permission' => $request['permission'] == 'on']);
-        $user->update($request->all());
+        $data = $request->all();
+        if ($data['password'] == null) {
+            unset($data['password']);
+        } else {
+            $data['password'] = bcrypt($data['password']);
+        }
+        $user->update($data);
         return redirect()->route('users.index')->with('success', true);
     }
 
