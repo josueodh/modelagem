@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link {{ Route::is('roles.index') ? 'active' : '' }}">
+                    <a href="{{ route('roles.index') }}" class="nav-link {{ Route::is('roles.index') ? 'active' : '' }}">
                         <i class="fas fa-address-card"></i>
                         <p>Cargo</p>
                     </a>
