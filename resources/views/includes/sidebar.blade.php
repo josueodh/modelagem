@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-x: hidden;">
+<aside class="main-sidebar elevation-4 sidebar-dark-warning" style="overflow-x: hidden;">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
         <img src="{{ asset('img/code.png') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -51,6 +51,12 @@
                     <a href="{{ route('departaments.index') }}" class="nav-link {{ Route::is('departaments.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>Departamento</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('pricing.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>Precificação</p>
                     </a>
                 </li>
             </ul>

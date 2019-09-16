@@ -32052,3 +32052,28 @@ a.text-muted:hover {
   display: inline-block;
 }
 
+.btn-parcelas {
+  margin: auto;
+}
+
+.btn-code {
+  color: black;
+  box-shadow: none;
+  background-color: #ffc107;
+  border-color: black;
+}
+
+.card-code {
+  border-top: 3px solid #ffc107;
+}
+
+.color-code {
+  color: #ffc107;
+}
+
+.sidebar-dark-warning .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-warning .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: #ffc107;
+  color: black;
+}
+

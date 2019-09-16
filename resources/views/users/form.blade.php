@@ -14,9 +14,13 @@
 </div>
 <div class="row">
     <div class="form-group col-sm-6">
-        <label for="photo">Foto de Perfil</label>
-        <input type="file" class="form-control-file" value="{{ old('photo', $user->photo) }}"
-            accept="image/*" name="photo" id="photo">
+        <label for="photo">Foto de perfil</label>
+        <div class="input-group">
+            <div class="custom-file">
+            <input type="file" class="custom-file-input" name="photo" id="photo">
+            <label class="custom-file-label" for="photo">Selecione uma imagem de perfil</label>
+            </div>
+        </div>
     </div>
     <div class="col-md-6 col-12">
         <label class="required">Cargo</label>
