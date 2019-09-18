@@ -32077,3 +32077,7 @@ a.text-muted:hover {
   color: black;
 }
 
+.card-parcelas {
+  display: none;
+}
+
