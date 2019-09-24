@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('photo')->nullable();
             $table->integer('permission')->default('0');
-            $table->unsignedInteger('role_id');
+            $table->unsignedInteger('role_id')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
