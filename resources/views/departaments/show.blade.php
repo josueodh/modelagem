@@ -3,19 +3,17 @@
 @section('content')
 
 @component('components.show')
-    @slot('title', 'Exibir Departamento')
-    @slot('lista')
-        <li class="list-group-item">
-            <b><i class="fas fa-hashtag"></i> ID</b> <a class="float-right">
-                {{$departament->id}}
-            </a>
-        </li>
-        <li class="list-group-item">
-            <b><i class="fas fa-hashtag"></i> Descrição</b> <a class="float-right">
-                {{$departament->description}}
-            </a>
-        </li>
+    @slot('title', $departament->name)
+    @slot('list')
+        @include('departaments.list')
     @endslot
+    @slot('delete',route('departaments.destroy',$departament->id))    
+    @slot('edit',route('departaments.edit',$departament->id))    
 @endcomponent
 
 @endsection
+
+@push('scripts')
+<script src="{{ asset('js/components/sweetAlert.js') }}"></script>
+    
+@endpush
