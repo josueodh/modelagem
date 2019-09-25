@@ -27,7 +27,7 @@
 
                         <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
-                        <p class="text-muted text-center">Gerente de Projetos</p>
+                        <p class="text-muted text-center">{{ $user->role['name'] }}</p>
 
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">

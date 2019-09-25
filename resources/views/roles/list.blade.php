@@ -1,7 +1,7 @@
 <li class="list-group-item">
     <b class="title-list-show"><i class="fas fa-boxes"></i> Departamento</b>
     <br>
-    Departamento de projetos
+    {{ $role->departament_id['name'] }}
 </li>
 <li class="list-group-item">
     <b class="title-list-show"><i class="fas fa-book"></i> Descrição do Cargo</b>

@@ -4,10 +4,6 @@
         <input type="text" class="form-control" required value="{{ old('name', $user->name) }}" name="name" id="nome">
     </div>
     <div class="form-group col-sm-6">
-        <label class="required" for="sobrenome">Sobrenome</label>
-        <input type="text" class="form-control" required value="{{ old('last_name', $user->last_name) }}" name="last_name" id="sobrenome">
-    </div>
-    <div class="form-group col-sm-12">
         <label class="required" for="email">E-mail</label>
         <input type="email" class="form-control" required value="{{ old('email', $user->email) }}" name="email" id="mail">
     </div>
@@ -25,7 +21,10 @@
     <div class="col-md-6 col-12">
         <label class="required">Cargo</label>
         <select class="form-control select2" name="role_id" value="{{ old('role_id', $user->role_id) }}" required>
-            <option value="1">Projetista</option>
+            <option></option>
+            @foreach ($roles as $role)
+                <option value="{{ $role->id }}">{{ $role->name }}</option>
+            @endforeach
         </select>
     </div>
 </div>
