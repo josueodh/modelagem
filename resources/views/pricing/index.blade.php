@@ -105,7 +105,7 @@
 </div>
 <div class="card card-code card-outline card card-parcelas" >
         <div class="card-header ">
-                <h3>Precificação</h3>
+                <h3>Parcelas</h3>
             </div>
     <div class="card-body table-responsive ">
         <table class="table table-hover table-striped">

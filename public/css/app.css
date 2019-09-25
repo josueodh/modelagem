@@ -32081,3 +32081,15 @@ a.text-muted:hover {
   display: none;
 }
 
+.btn-delete {
+  margin-right: 5px;
+}
+
+.title-list-show {
+  margin-bottom: 5px;
+}
+
+.text-show {
+  text-align: justify;
+}
+

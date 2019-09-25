@@ -3,12 +3,12 @@
 @section('content')
 
 @component('components.show')
-    @slot('title', $departament->name)
+    @slot('title', $role->name)
     @slot('list')
-        @include('departaments.list')
+        @include('roles.list')
     @endslot
-    @slot('delete',route('departaments.destroy',$departament->id))    
-    @slot('edit',route('departaments.edit',$departament->id))    
+    @slot('delete',route('roles.destroy',$role->id))    
+    @slot('edit',route('roles.edit',$role->id))    
 @endcomponent
 
 @endsection
