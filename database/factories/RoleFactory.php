@@ -9,5 +9,6 @@ $factory->define(Role::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'departament_id' => $faker->randomDigit,
+        'description' => $faker->name,
     ];
 });
