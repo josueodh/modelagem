@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/users', 'UserController');
 Route::resource('/roles', 'RoleController');
 Route::resource('/departaments','DepartamentController');
+Route::resource('/categories' , 'CategoryController')->except('show');
 Route::get('/pricing', 'PricingController@index')->name('pricing.index');

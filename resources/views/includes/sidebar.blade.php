@@ -59,6 +59,12 @@
                         <p>Precificação</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('categories.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>Categoria</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
