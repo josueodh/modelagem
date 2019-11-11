@@ -54,15 +54,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('pricing.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
+                    <a href="{{ route('categories.index') }}" class="nav-link {{ Route::is('categories.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-dollar-sign"></i>
-                        <p>Precificação</p>
+                        <p>Categoria</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('categories.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
+                    <a href="{{ route('pricing.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-dollar-sign"></i>
-                        <p>Categoria</p>
+                        <p>Precificação</p>
                     </a>
                 </li>
             </ul>
