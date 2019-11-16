@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Warning;
+use App\Project;
 use Illuminate\Http\Request;
 
-class WarningController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class WarningController extends Controller
      */
     public function index()
     {
-        $warnings = Warning::all();
-        return view('warnings.index', compact('warnings'));
+        //
     }
 
     /**
@@ -25,8 +24,7 @@ class WarningController extends Controller
      */
     public function create()
     {
-        $warning = new Warning();
-        return view('warnings.create', compact('warning'));
+        //
     }
 
     /**
@@ -37,54 +35,51 @@ class WarningController extends Controller
      */
     public function store(Request $request)
     {
-        Warning::create($request->all());
-        return redirect()->route('warnings.index')->with('success', true);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Warning  $warning
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Warning $warning)
+    public function show(Project $project)
     {
-        return view('warnings.show', compact('warning'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Warning  $warning
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Warning $warning)
+    public function edit(Project $project)
     {
-        return view('warnings.edit', compact('warning'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Warning  $warning
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Warning $warning)
+    public function update(Request $request, Project $project)
     {
-        $warning->update($request->all());
-        return redirect()->route('warnings.index')->with('success', true);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Warning  $warning
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Warning $warning)
+    public function destroy(Project $project)
     {
-        $warning->delete();
-        return redirect()->route('warnings.index')->with('success', true);
+        //
     }
 }

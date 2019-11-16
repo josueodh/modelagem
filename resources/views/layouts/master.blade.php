@@ -19,7 +19,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <nav class="main-header navbar navbar-expand navbar-light border-bottom">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -73,15 +73,15 @@
             <div class="float-right d-none d-sm-inline">
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2019 <a href="https://codejr.com.br" target="_blank">Code Jr</a>.</strong> Todos direitos
+            <strong>Copyright &copy; 2019 <a href="https://codejr.com.br" class="color-code" target="_blank">Code Jr</a>.</strong> Todos direitos
             reservados.
         </footer>
     </div>
     <!-- ./wrapper -->
     <script src="{{ asset('js/app.js') }}"></script>
-     <script>
+    <script>
         var errors = {!! $errors !!}
-    </script>
+        </script>
     <script src="{{ asset('js/components/error.js')  }}"></script>
     @stack('scripts')
 </body>

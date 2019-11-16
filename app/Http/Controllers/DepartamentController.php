@@ -49,7 +49,7 @@ class DepartamentController extends Controller
      */
     public function show(Departament $departament)
     {
-        return view('departaments.show',compat('departament'));
+        return view('departaments.show',compact('departament'));
     }
 
     /**

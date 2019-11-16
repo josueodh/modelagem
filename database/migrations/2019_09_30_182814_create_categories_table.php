@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWarningsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateWarningsTable extends Migration
      */
     public function up()
     {
-        Schema::create('warnings', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('title');
-            $table->longText('description');
-            $table->unsignedBigInteger('user_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateWarningsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('warnings');
+        Schema::dropIfExists('categories');
     }
 }

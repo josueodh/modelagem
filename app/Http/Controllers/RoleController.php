@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Role;
+use App\Departament;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -26,7 +27,8 @@ class RoleController extends Controller
     public function create()
     {
         $role = new Role();
-        return view('roles.create',compact('role'));
+        $departaments = Departament::all();
+        return view('roles.create',compact('role','departaments'));
     }
 
     /**
@@ -60,7 +62,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('roles.edit',compact('role'));
+        $departaments = Departament::all();
+        return view('roles.edit',compact('role','departaments'));
     }
 
     /**
