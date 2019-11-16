@@ -66,9 +66,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('projects.index') }}" class="nav-link {{ Route::is('project.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-computer"></i>
+                        <p>Projeto</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('pricing.index') }}" class="nav-link {{ Route::is('pricing.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>Precificação</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('clients.index') }}" class="nav-link {{ Route::is('clients.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>Cliente</p>
                     </a>
                 </li>
             </ul>

@@ -23,4 +23,6 @@ Route::resource('/roles', 'RoleController');
 Route::resource('/departaments', 'DepartamentController');
 Route::resource('/warnings', 'WarningController');
 Route::resource('/categories', 'CategoryController')->except('show');
+Route::resource('/projects', 'ProjectController');
+Route::resource('/clients', 'ClientController');
 Route::get('/pricing', 'PricingController@index')->name('pricing.index');
