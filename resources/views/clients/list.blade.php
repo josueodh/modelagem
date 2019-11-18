@@ -1,25 +1,20 @@
 <li class="list-group-item">
-    <b class="title-list-show"><i class="fas fa-book"></i> Descrição do Projeto</b>
+    <b class="title-list-show"><i class="fas fa-book"></i> Telefone</b>
     <br>
-    {{ $project->description }}
+    {{ $client->cellphone }}
 </li>
 <li class="list-group-item">
-    <b class="title-list-show"><i class="fas fa-book"></i> Preço</b>
+    <b class="title-list-show"><i class="fas fa-book"></i> E-mail</b>
     <br>
-    {{ $project->price }}
+    {{ $client->email }}
 </li>
 <li class="list-group-item">
-    <b class="title-list-show"><i class="fas fa-book"></i> Cliente</b>
+    <b class="title-list-show"><i class="fas fa-book"></i> Status</b>
     <br>
-    {{ $project->client }}
+    {{ $client->status }}
 </li>
 <li class="list-group-item">
-    <b class="title-list-show"><i class="fas fa-book"></i> Descrição do Projeto</b>
+    <b class="title-list-show"><i class="fas fa-book"></i> Descrição</b>
     <br>
-    {{ $project->description }}
-</li>
-<li class="list-group-item">
-    <b class="title-list-show"><i class="fas fa-book"></i> Desenvolvedores</b>
-    <br>
-    {{ $project->description }}
+    {{ $client->description }}
 </li>

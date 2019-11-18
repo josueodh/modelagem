@@ -3,10 +3,10 @@
 @section('content')
 
 @component('components.edit')
-    @slot('title', 'Editar Projeto')
-    @slot('url', route('projects.update', $project->id))
+    @slot('title', 'Editar Cliente')
+    @slot('url', route('clients.update', $client->id))
     @slot('form')
-        @include('projects.form')
+        @include('clients.form')
     @endslot
 @endcomponent
 

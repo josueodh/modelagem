@@ -5,21 +5,21 @@
 
 @component('components.table')
     @slot('create', route('clients.create'))
-    @slot('titulo', 'Cargos')
+    @slot('titulo', 'Clientes')
 
 
     @slot('head')
         <th>Nome</th>
-        <th>Preço</th>
-        <th>Cliente</th>
+        <th>Telefone</th>
+        <th>Status</th>
         <th></th>
     @endslot
     @slot('body')
         @foreach ($clients as $client)
             <tr>
                 <td>{{ $client->name }}</td>
-                <td>{{ $client->price }}</td>
-                <td>{{ $client->client }}</td>
+                <td>{{ $client->cellphone }}</td>
+                <td>{{ $client->status }}</td>
                 <td class="options">
                     <a href="{{ route('clients.show', $client->id) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                     <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>

@@ -30,7 +30,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column icone_sidebar" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link {{ '' ? 'active' : '' }}">
+                    <a href="/" class="nav-link {{ '/' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
@@ -60,14 +60,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('warnings.index') }}" class="nav-link {{ Route::is('warning.index') ? 'active' : '' }}">
+                    <a href="{{ route('warnings.index') }}" class="nav-link {{ Route::is('warnings.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-exclamation"></i>
                         <p>Avisos</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('projects.index') }}" class="nav-link {{ Route::is('project.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-computer"></i>
+                    <a href="{{ route('projects.index') }}" class="nav-link {{ Route::is('projects.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-laptop-code"></i>
                         <p>Projeto</p>
                     </a>
                 </li>
@@ -79,7 +79,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('clients.index') }}" class="nav-link {{ Route::is('clients.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <i class="nav-icon far fa-id-card"></i>
                         <p>Cliente</p>
                     </a>
                 </li>

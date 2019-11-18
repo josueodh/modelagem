@@ -3,12 +3,12 @@
 @section('content')
 
 @component('components.show')
-    @slot('title', $project->name)
+    @slot('title', $client->name)
     @slot('list')
-        @include('projects.list')
+        @include('clients.list')
     @endslot
-    @slot('delete',route('projects.destroy',$project->id))    
-    @slot('edit',route('projects.edit',$project->id))    
+    @slot('delete',route('clients.destroy',$client->id))    
+    @slot('edit',route('clients.edit',$client->id))    
 @endcomponent
 
 @endsection
