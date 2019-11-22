@@ -22,6 +22,9 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
+        Schema::table('projects', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+        });
     }
 
     /**

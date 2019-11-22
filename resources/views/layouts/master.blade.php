@@ -81,6 +81,9 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         var errors = {!! $errors !!}
+        document.querySelectorAll('select[value]').forEach(function(elemento){
+            elemento.value = elemento.getAttribute('value');
+        });
         </script>
     <script src="{{ asset('js/components/error.js')  }}"></script>
     @stack('scripts')

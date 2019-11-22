@@ -30,7 +30,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column icone_sidebar" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="/" class="nav-link {{ '/' ? 'active' : '' }}">
+                    <a href="{{ route('home.index') }}" class="nav-link {{ Route::is('home.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>

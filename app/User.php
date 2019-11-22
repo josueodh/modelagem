@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','photo', 'role_id' , 'permission', 'last_name'
+        'name', 'email', 'password', 'photo', 'role_id', 'permission', 'last_name'
     ];
 
     /**
@@ -37,7 +37,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo('App\Role');
     }
+
+    public function project()
+    {
+        return $this->belongsToMany('App\Project');
+    }
+
+    public function warning()
+    {
+        return $this->belongsToMany('App\Warning');
+    }
+
+    public function getTotalProject()
+    { }
 }

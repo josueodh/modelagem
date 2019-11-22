@@ -1,5 +1,5 @@
 <div class="col-md-10 offset-md-1 col-12">
-    <div class="card card-outline card-primary">
+    <div class="card card-outline card-code">
         <div class="card-header">
             <h3 class="card-title title-show">{{ $title ?? null }} </h3>
         </div>

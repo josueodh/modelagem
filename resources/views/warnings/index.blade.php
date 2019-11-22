@@ -5,7 +5,7 @@
 
 @component('components.table')
     @slot('create', route('warnings.create'))
-    @slot('titulo', 'Usuários')
+    @slot('titulo', 'Avisos')
 
 
     @slot('head')
@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ $warning->title }}</td>
                 <td>{{ $warning->user['name'] }}</td>
-                <td>{{ $warning->created_at }}</td>
+                <td>{{  date('d-m-y', strtotime($warning->created_at)) }}</td>
                 <td class="options">
                     <a href="{{ route('warnings.show', $warning->id) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                     <a href="{{ route('warnings.edit', $warning->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>

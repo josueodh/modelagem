@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+
 class UserTableSeeder extends Seeder
 {
     /**
@@ -15,11 +16,21 @@ class UserTableSeeder extends Seeder
             'email' => 'admin@codejr.com.br'
         ], [
             'name'      => 'Code',
-            'last_name' => 'Jr',
             'email'     => 'admin@codejr.com.br',
             'password' => bcrypt('123456'),
+            'permission' => '1',
+            'role_id' => '1',
+        ]);
+        User::updateOrCreate([
+            'email' => 'membro@codejr.com.br'
+        ], [
+            'name'      => 'membro',
+            'email'     => 'membro@codejr.com.br',
+            'password' => bcrypt('123456'),
+            'permission' => '0',
+            'role_id' => '1',
         ]);
 
-        factory(App\User::class, 9)->create();
+        factory(App\User::class, 35)->create();
     }
 }

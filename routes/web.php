@@ -11,18 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+Route::middleware('auth')->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/users', 'UserController');
-Route::resource('/roles', 'RoleController');
-Route::resource('/departaments', 'DepartamentController');
-Route::resource('/warnings', 'WarningController');
-Route::resource('/categories', 'CategoryController')->except('show');
-Route::resource('/projects', 'ProjectController');
-Route::resource('/clients', 'ClientController');
-Route::get('/pricing', 'PricingController@index')->name('pricing.index');
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home.index');
+    Route::resource('/users', 'UserController');
+    Route::resource('/departaments', 'DepartamentController');
+    Route::resource('/roles', 'RoleController');
+    Route::resource('/warnings', 'WarningController');
+    Route::resource('/categories', 'CategoryController')->except('show');
+    Route::resource('/projects', 'ProjectController');
+    Route::resource('/clients', 'ClientController');
+    Route::get('/pricing', 'PricingController@index')->name('pricing.index');
+});

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use App\Warning;
 
 class UserController extends Controller
 {
@@ -28,7 +29,7 @@ class UserController extends Controller
     {
         $user = new User;
         $roles = Role::all();
-        return view('users.create', compact('user','roles'));
+        return view('users.create', compact('user', 'roles'));
     }
 
     /**
@@ -56,7 +57,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $warnings = Warning::take(4)->orderBy('id', 'DESC')->get();
+        return view('users.show', compact('user', 'warnings'));
     }
 
     /**

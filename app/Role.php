@@ -8,9 +8,11 @@ class Role extends Model
 {
     protected $guarded = [];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsToMany('App\User');
     }
+
     public function departament()
     {
         return $this->belongsTo('App\Departament');

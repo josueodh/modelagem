@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -26,7 +28,9 @@ class ProjectController extends Controller
     public function create()
     {
         $project = new Project();
-        return view('projects.create', compact('project'));
+        $categories = Category::all();
+        $users = User::all();
+        return view('projects.create', compact('project', 'categories', 'users'));
     }
 
     /**
@@ -37,7 +41,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        Project::create($request->all());
+        $data = $request->all();
+        unset($data['user']);
+        $project = Project::create($data);
+        $project->user()->attach($request->user);
         return redirect()->route('projects.index')->with('success', true);
     }
 
@@ -60,7 +67,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+        $categories = Category::all();
+        $users = User::all();
+        return view('projects.edit', compact('project', 'categories', 'users'));
     }
 
     /**

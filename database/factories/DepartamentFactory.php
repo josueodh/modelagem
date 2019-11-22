@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Departament::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'description' => $faker->name,
+        'name' => "Departamento $faker->word",
+        'description' => $faker->text($maxNbChars = 200),
     ];
 });

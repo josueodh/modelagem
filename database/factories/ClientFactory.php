@@ -7,6 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Client::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'cellphone' => $faker->phoneNumber,
+        'status' => $faker->word,
+        'description' => $faker->text,
     ];
 });

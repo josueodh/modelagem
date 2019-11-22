@@ -17,8 +17,9 @@
     @slot('body')
         @foreach ($projects as $project)
             <tr>
+                    
                 <td>{{ $project->name }}</td>
-                <td>{{ $project->price }}</td>
+                <td>{{ 'R$ ' . number_format( $project->price , 2, ',', '.') }}</td>
                 <td>{{ $project->client }}</td>
                 <td class="options">
                     <a href="{{ route('projects.show', $project->id) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>

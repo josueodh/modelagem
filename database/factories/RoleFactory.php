@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Role::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'departament_id' => $faker->randomDigit,
-        'description' => $faker->name,
+        'name' => $faker->jobTitle,
+        'departament_id' => $faker->biasedNumberBetween($min = 1, $max = 6, $function = 'sqrt'),
+        'description' => $faker->text($maxNbChars = 200),
     ];
 });
