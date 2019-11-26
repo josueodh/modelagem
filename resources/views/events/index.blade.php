@@ -4,24 +4,23 @@
 
 
 @component('components.table')
-    @can('create', App\Departament::class)
-        @slot('create', route('departaments.create'))
-    @endcan
-    @slot('titulo', 'Departamentos')
+    @slot('create', route('events.create'))
+    @slot('titulo', 'Evento')
 
 
     @slot('head')
         <th>Nome</th>
+        <th>Data</th>
         <th></th>
     @endslot
     @slot('body')
-        @foreach ($departaments as $departament)
+        @foreach ($events as $event)
             <tr>
-                <td>{{ $departament->name }}</td>
+                <td>{{ $event->title }}</td>
+                <td>{{ date('d-m-Y', strtotime($event->date)) }}</td>
                 <td class="options">
-                    <a href="{{ route('departaments.show', $departament->id) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
-                        <a href="{{ route('departaments.edit', $departament->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-                        <form class="form-delete" action="{{ route('departaments.destroy', $departament->id) }}" method="post">
+                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <form class="form-delete" action="{{ route('events.destroy', $event->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>

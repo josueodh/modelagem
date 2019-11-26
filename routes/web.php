@@ -25,5 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/categories', 'CategoryController')->except('show');
     Route::resource('/projects', 'ProjectController');
     Route::resource('/clients', 'ClientController');
+    Route::resource('/events', 'EventController');
     Route::get('/pricing', 'PricingController@index')->name('pricing.index');
 });

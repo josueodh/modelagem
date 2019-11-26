@@ -20,7 +20,9 @@
                 <td>{{ $role->departament['name'] }}</td>
                 <td class="options">
                     <a href="{{ route('roles.show', $role->id) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
-                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                    @can('edit' ,App\Role::class)
+                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                    @endcan
                     <form class="form-delete" action="{{ route('roles.destroy', $role->id) }}" method="post">
                         @csrf
                         @method('delete')

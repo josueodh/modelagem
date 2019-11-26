@@ -81,10 +81,19 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         var errors = {!! $errors !!}
-        document.querySelectorAll('select[value]').forEach(function(elemento){
-            elemento.value = elemento.getAttribute('value');
+        $(function() {
+        $('select[value]').each(function () {
+            var value = $(this).attr('value');
+
+            if (value) {
+                value = JSON.parse(value);
+            }
+
+            $(this).val(value);
         });
-        </script>
+        });
+
+    </script>
     <script src="{{ asset('js/components/error.js')  }}"></script>
     @stack('scripts')
 </body>

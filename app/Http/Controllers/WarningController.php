@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class WarningController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Warning::class, 'warning');
+    }
     /**
      * Display a listing of the resource.
      *

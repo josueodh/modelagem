@@ -7,8 +7,8 @@
     @slot('list')
         @include('departaments.list')
     @endslot
-    @slot('delete',route('departaments.destroy',$departament->id))    
-    @slot('edit',route('departaments.edit',$departament->id))    
+        @slot('delete',route('departaments.destroy',$departament->id))    
+        @slot('edit',route('departaments.edit',$departament->id))    
 @endcomponent
 
 @endsection

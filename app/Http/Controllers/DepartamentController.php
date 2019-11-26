@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class DepartamentController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Departament::class, 'departament');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,7 @@ class DepartamentController extends Controller
     public function index()
     {
         $departaments = Departament::all();
-        return view('departaments.index',compact('departaments')); 
+        return view('departaments.index', compact('departaments'));
     }
 
     /**
@@ -26,7 +37,7 @@ class DepartamentController extends Controller
     public function create()
     {
         $departament = new Departament();
-        return view('departaments.create',compact('departament'));
+        return view('departaments.create', compact('departament'));
     }
 
     /**
@@ -38,7 +49,7 @@ class DepartamentController extends Controller
     public function store(Request $request)
     {
         Departament::create($request->all());
-        return redirect()->route('departaments.index')->with('success',true);
+        return redirect()->route('departaments.index')->with('success', true);
     }
 
     /**
@@ -49,7 +60,7 @@ class DepartamentController extends Controller
      */
     public function show(Departament $departament)
     {
-        return view('departaments.show',compact('departament'));
+        return view('departaments.show', compact('departament'));
     }
 
     /**
@@ -60,7 +71,7 @@ class DepartamentController extends Controller
      */
     public function edit(Departament $departament)
     {
-        return view('departaments.edit',compact('departament'));
+        return view('departaments.edit', compact('departament'));
     }
 
     /**
@@ -73,7 +84,7 @@ class DepartamentController extends Controller
     public function update(Request $request, Departament $departament)
     {
         $departament->update($request->all());
-        return redirect()->route('departaments.index')->with('success',true);
+        return redirect()->route('departaments.index')->with('success', true);
     }
 
     /**
@@ -85,6 +96,6 @@ class DepartamentController extends Controller
     public function destroy(Departament $departament)
     {
         $departament->delete();
-        return redirect()->route('departaments.index')->with('success',true);
+        return redirect()->route('departaments.index')->with('success', true);
     }
 }

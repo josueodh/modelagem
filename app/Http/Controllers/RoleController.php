@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Role::class, 'role');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('roles.index',compact('roles'));
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -28,7 +39,7 @@ class RoleController extends Controller
     {
         $role = new Role();
         $departaments = Departament::all();
-        return view('roles.create',compact('role','departaments'));
+        return view('roles.create', compact('role', 'departaments'));
     }
 
     /**
@@ -40,7 +51,7 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         Role::create($request->all());
-        return redirect()->route('roles.index')->with('success',true);
+        return redirect()->route('roles.index')->with('success', true);
     }
 
     /**
@@ -51,7 +62,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return view('roles.show',compact('role'));
+        return view('roles.show', compact('role'));
     }
 
     /**
@@ -63,7 +74,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $departaments = Departament::all();
-        return view('roles.edit',compact('role','departaments'));
+        return view('roles.edit', compact('role', 'departaments'));
     }
 
     /**
@@ -76,7 +87,7 @@ class RoleController extends Controller
     public function update(Request $request, Role $role)
     {
         $role->update($request->all());
-        return redirect()->route('roles.index')->with('success',true);
+        return redirect()->route('roles.index')->with('success', true);
     }
 
     /**
@@ -88,6 +99,6 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         $role->delete();
-        return redirect()->route('roles.index')->with('success',true);
+        return redirect()->route('roles.index')->with('success', true);
     }
 }

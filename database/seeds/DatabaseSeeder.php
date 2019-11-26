@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             WarningTableSeeder::class,
             ClientTableSeeder::class,
             ProjectTableSeeder::class,
+            EventTableSeeder::class,
         ]);
     }
 }

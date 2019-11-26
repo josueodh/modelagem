@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->authorizeResource(Project::class, 'project');
+    // }
+
     /**
      * Display a listing of the resource.
      *

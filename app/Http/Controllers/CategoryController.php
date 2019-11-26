@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Category::class, 'category');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index',compact('categories'));
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -26,7 +37,7 @@ class CategoryController extends Controller
     public function create()
     {
         $category = new Category();
-        return view('categories.create',compact('category'))->with('success',true);
+        return view('categories.create', compact('category'))->with('success', true);
     }
 
     /**
@@ -38,10 +49,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-        return redirect()->route('categories.index')->with('success',true);
+        return redirect()->route('categories.index')->with('success', true);
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -51,7 +62,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit',compact('category')); 
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -64,7 +75,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-        return redirect()->route('categories.index')->with('success',true);
+        return redirect()->route('categories.index')->with('success', true);
     }
 
     /**
@@ -76,6 +87,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('success',true);
+        return redirect()->route('categories.index')->with('success', true);
     }
 }
